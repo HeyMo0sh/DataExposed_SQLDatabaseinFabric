@@ -37,7 +37,7 @@ jobs:
       - uses: actions/upload-artifact@v4.5.0
         with:
           name: ${{env.ARTIFACT}}
-          path: ${{ github.workspace }}/bin/Debug/ 
+          path: ${{ github.workspace }}SQL-DataExposed-001.SQLDatabase/bin/Debug/ 
 
 # Deploy dacpac job
   DeploySQLDBinFabricUpdates:
