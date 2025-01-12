@@ -68,7 +68,7 @@ jobs:
           # The connection string, including authentication information, for the Azure SQL Database.
           connection-string: '${{ secrets.DEV_DB_CONNECTION_STRING }}'
           # Path to the dacpac file in the artifact
-          path: 'SQLDBinFabric.dacpac'
+          path: 'SQL-DataExposed-001.dacpac'
           # Action we want it to do, in this case 'Publish' the contents of the dacpac to the database
           action: 'publish'  
           # Since no Firewall in-place
