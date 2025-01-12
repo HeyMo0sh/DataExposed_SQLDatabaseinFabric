@@ -1,4 +1,4 @@
-CREATE TABLE [dbo].[ProductInformation] ( 
+CREATE TABLE [SalesLT].[ProductInformation] ( 
     [ProductID] INT IDENTITY(1,1) PRIMARY KEY, -- Primary key, auto-incrementing
     [ProductName] VARCHAR(100) NOT NULL,       -- Name of the product
     [Description] VARCHAR(MAX),                -- Description of the product
