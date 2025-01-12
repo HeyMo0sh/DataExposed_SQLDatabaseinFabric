@@ -13,6 +13,7 @@ CREATE TABLE [SalesLT].[ProductInformation] (
     [Available]   BIT             NULL,
     [Embedding]   VARBINARY (MAX) NULL,
     [CreateDate]  DATETIME        NULL,
+    [UpdateDate]  DATETIME        NULL,
     PRIMARY KEY CLUSTERED ([ProductID] ASC)
 );
 
