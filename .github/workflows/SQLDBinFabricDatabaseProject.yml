@@ -1,8 +1,10 @@
 name: Update SQL database in Fabric from a SQL Database Project
 
-# Sets the trigger to be triggered manually
-on: 
-  workflow_dispatch:
+# Sets the trigger to be triggered when pushed to main
+on:
+  push:
+    branches:
+      - main
 
 # Alternatively, can sets the trigger to update when pull request is done to the main branch
 # on:
@@ -20,7 +22,7 @@ jobs:
   # Job to build and publish the dacpac
   BuildDacpac:
     # I use a GitHub-Hosted runner here, you can opt to use a self-hosted one instead
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -44,7 +46,7 @@ jobs:
     # Set the dependency for the build job
     needs: BuildDacpac
     # Easier to use Github-hosted runner if updating in GitHub
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     # Steps to deploy the updates to a SQL database in Fabric
     steps:
