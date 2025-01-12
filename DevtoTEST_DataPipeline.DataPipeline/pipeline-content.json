@@ -1,0 +1,265 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "name": "Copy_DEVData_TEST",
+        "description": "Copying data from DEV to TEST",
+        "type": "Copy",
+        "dependsOn": [],
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureOutput": false,
+          "secureInput": false
+        },
+        "typeProperties": {
+          "source": {
+            "type": "FabricSqlDatabaseSource",
+            "partitionOption": "None",
+            "datasetSettings": {
+              "annotations": [],
+              "connectionSettings": {
+                "name": "SQL-DataExposed-001",
+                "properties": {
+                  "annotations": [],
+                  "type": "FabricSqlDatabase",
+                  "typeProperties": {
+                    "workspaceId": "e1905f40-8890-4281-b23d-f3661f2af7ce",
+                    "artifactId": "5c1f451b-8945-412a-8761-58c5192343a5"
+                  },
+                  "externalReferences": {
+                    "connection": "9c412e56-37a0-472b-820e-42c4563c8d82"
+                  }
+                }
+              },
+              "type": "FabricSqlDatabaseTable",
+              "schema": [],
+              "typeProperties": {
+                "schema": "SalesLT",
+                "table": "ProductInformation"
+              }
+            }
+          },
+          "sink": {
+            "type": "FabricSqlDatabaseSink",
+            "datasetSettings": {
+              "annotations": [],
+              "connectionSettings": {
+                "name": "SQL-DataExposed-001",
+                "properties": {
+                  "annotations": [],
+                  "type": "FabricSqlDatabase",
+                  "typeProperties": {
+                    "workspaceId": "aab1f400-321c-4758-a8a4-6b9d51e44dc3",
+                    "artifactId": "43e24209-201d-4b87-bf64-5a3e5f2e64db"
+                  },
+                  "externalReferences": {
+                    "connection": "9c412e56-37a0-472b-820e-42c4563c8d82"
+                  }
+                }
+              },
+              "type": "FabricSqlDatabaseTable",
+              "schema": [],
+              "typeProperties": {
+                "schema": "SalesLT",
+                "table": "ProductInformation"
+              }
+            }
+          },
+          "enableStaging": false,
+          "translator": {
+            "type": "TabularTranslator",
+            "mappings": [
+              {
+                "source": {
+                  "name": "ProductID",
+                  "type": "Int32",
+                  "physicalType": "int"
+                },
+                "sink": {
+                  "name": "ProductID",
+                  "physicalType": "int"
+                }
+              },
+              {
+                "source": {
+                  "name": "ProductName",
+                  "type": "String",
+                  "physicalType": "varchar",
+                  "length": "100"
+                },
+                "sink": {
+                  "name": "ProductName",
+                  "physicalType": "varchar",
+                  "length": "100"
+                }
+              },
+              {
+                "source": {
+                  "name": "Description",
+                  "type": "String",
+                  "physicalType": "varchar",
+                  "length": "MAX"
+                },
+                "sink": {
+                  "name": "Description",
+                  "physicalType": "varchar",
+                  "length": "MAX"
+                }
+              },
+              {
+                "source": {
+                  "name": "Brand",
+                  "type": "String",
+                  "physicalType": "varchar",
+                  "length": "50"
+                },
+                "sink": {
+                  "name": "Brand",
+                  "physicalType": "varchar",
+                  "length": "50"
+                }
+              },
+              {
+                "source": {
+                  "name": "ListPrice",
+                  "type": "Decimal",
+                  "physicalType": "decimal",
+                  "scale": 2,
+                  "precision": 10
+                },
+                "sink": {
+                  "name": "ListPrice",
+                  "physicalType": "decimal",
+                  "scale": 2,
+                  "precision": 10
+                }
+              },
+              {
+                "source": {
+                  "name": "SalePrice",
+                  "type": "Decimal",
+                  "physicalType": "decimal",
+                  "scale": 2,
+                  "precision": 10
+                },
+                "sink": {
+                  "name": "SalePrice",
+                  "physicalType": "decimal",
+                  "scale": 2,
+                  "precision": 10
+                }
+              },
+              {
+                "source": {
+                  "name": "ItemNumber",
+                  "type": "String",
+                  "physicalType": "varchar",
+                  "length": "20"
+                },
+                "sink": {
+                  "name": "ItemNumber",
+                  "physicalType": "varchar",
+                  "length": "20"
+                }
+              },
+              {
+                "source": {
+                  "name": "GTIN",
+                  "type": "String",
+                  "physicalType": "varchar",
+                  "length": "20"
+                },
+                "sink": {
+                  "name": "GTIN",
+                  "physicalType": "varchar",
+                  "length": "20"
+                }
+              },
+              {
+                "source": {
+                  "name": "PackageSize",
+                  "type": "String",
+                  "physicalType": "varchar",
+                  "length": "50"
+                },
+                "sink": {
+                  "name": "PackageSize",
+                  "physicalType": "varchar",
+                  "length": "50"
+                }
+              },
+              {
+                "source": {
+                  "name": "Category",
+                  "type": "String",
+                  "physicalType": "varchar",
+                  "length": "50"
+                },
+                "sink": {
+                  "name": "Category",
+                  "physicalType": "varchar",
+                  "length": "50"
+                }
+              },
+              {
+                "source": {
+                  "name": "PostalCode",
+                  "type": "String",
+                  "physicalType": "varchar",
+                  "length": "10"
+                },
+                "sink": {
+                  "name": "PostalCode",
+                  "physicalType": "varchar",
+                  "length": "10"
+                }
+              },
+              {
+                "source": {
+                  "name": "Available",
+                  "type": "Boolean",
+                  "physicalType": "bit"
+                },
+                "sink": {
+                  "name": "Available",
+                  "physicalType": "bit"
+                }
+              },
+              {
+                "source": {
+                  "name": "Embedding",
+                  "type": "Byte[]",
+                  "physicalType": "varbinary",
+                  "length": "MAX"
+                },
+                "sink": {
+                  "name": "Embedding",
+                  "physicalType": "varbinary",
+                  "length": "MAX"
+                }
+              },
+              {
+                "source": {
+                  "name": "CreateDate",
+                  "type": "DateTime",
+                  "physicalType": "datetime"
+                },
+                "sink": {
+                  "name": "CreateDate",
+                  "physicalType": "datetime"
+                }
+              }
+            ],
+            "typeConversion": true,
+            "typeConversionSettings": {
+              "allowDataTruncation": true,
+              "treatBooleanAsNumber": false
+            }
+          }
+        }
+      }
+    ]
+  }
+}
