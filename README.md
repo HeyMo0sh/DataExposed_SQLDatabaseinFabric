@@ -1,4 +1,4 @@
-# Make Stuff Go with GitHub actions
+# Make Stuff Go with GitHub actions for Fabric SQL
 
 Let's deploy SQL in Fabric using GitHub actions.
 
