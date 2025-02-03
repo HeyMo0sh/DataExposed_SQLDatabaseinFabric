@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Name>SQL-DataExposed-001</Name>
     <ProjectGuid>{00000000-0000-0000-0000-000000000000}</ProjectGuid>
-    <DSP>Microsoft.Data.Tools.Schema.Sql.SqlDbFabricDatabaseSchemaProvider</DSP>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql160DatabaseSchemaProvider</DSP>
     <ModelCollation>1033, CI</ModelCollation>
   </PropertyGroup>
   <Target Name="BeforeBuild">
